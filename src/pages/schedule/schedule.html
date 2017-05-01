@@ -1,0 +1,85 @@
+<ion-header>
+  <ion-navbar no-border-bottom>
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title><img src="assets/img/logo.png" alt="Ionic logo" style="max-width: 70px"></ion-title>
+
+    <!-- <ion-segment [(ngModel)]="segment" (ionChange)="updateSchedule()">
+      <ion-segment-button value="all">
+        All
+      </ion-segment-button>
+      <ion-segment-button value="favorites">
+        Favorites
+      </ion-segment-button>
+    </ion-segment> -->
+
+ <!--    <ion-buttons end>
+      <button ion-button icon-only (click)="presentFilter()">
+        <ion-icon ios="ios-options-outline" md="md-options"></ion-icon>
+      </button>
+    </ion-buttons> -->
+  </ion-navbar>
+
+ <!--  <ion-toolbar no-border-top>
+    <ion-searchbar color="primary"
+                   [(ngModel)]="queryText"
+                   (ionInput)="updateSchedule()"
+                   placeholder="Search">
+    </ion-searchbar>
+  </ion-toolbar> -->
+</ion-header>
+
+<ion-content>
+  <ion-grid text-center style="padding-top: 30px;"> 
+                <ion-row wrap>
+                    <ion-col width-50 style="border: 1px solid lightgrey;margin-left:5px;margin-right:10px;">
+                      <div style="padding-top:20px;" (click)="myreservations()">
+                      <img src="assets/img/calendar.png" alt="calendar" style="max-width: 40%;">
+                      <ion-label>My Reservations</ion-label>
+                      </div>
+                      </ion-col>
+                      <ion-col width-50 style="border: 1px solid lightgrey;margin-right:5px;">
+                      <div style="padding-top:20px;">
+                      <img src="assets/img/newreservations.png" alt="calendar" style="max-width: 40%;">
+                      <ion-label>New Reservations</ion-label>
+                      </div>
+                    </ion-col>
+                </ion-row>
+
+
+                <ion-row wrap style="padding-top: 25px;">
+                    <ion-col width-50 style="border: 1px solid lightgrey;margin-left:5px;margin-right:10px;">
+                      <div style="padding-top:20px;">
+                      <img src="assets/img/hospital.png" alt="calendar" style="max-width: 40%;">
+                      <ion-label>Search Hospitals</ion-label>
+                      </div>
+                      </ion-col>
+                      <ion-col width-50 style="border: 1px solid lightgrey;margin-right:5px;">
+                      <div style="padding-top:20px;">
+                      <img src="assets/img/dispensary.png" alt="calendar" style="max-width: 40%;">
+                      <ion-label>Search Dispensaries</ion-label>
+                      </div>
+                    </ion-col>
+                </ion-row>
+
+
+                <ion-row wrap style="padding-top: 25px;">
+                    <ion-col width-50 style="border: 1px solid lightgrey;margin-left:5px;margin-right:10px;">
+                      <div style="padding-top:20px;">
+                      <img src="assets/img/doctor.png" alt="calendar" style="max-width: 49%;">
+                      <ion-label>Search Doctors</ion-label>
+                      </div>
+                      </ion-col>
+                      <ion-col width-50 style="border: 1px solid lightgrey;margin-right:5px;">
+                      <div style="padding-top:20px;">
+                      <img src="assets/img/clinic.png" alt="calendar" style="max-width: 40%;">
+                      <ion-label>Search Private Clinics</ion-label>
+                      </div>
+                    </ion-col>
+                </ion-row>
+</ion-grid>
+    
+
+
+</ion-content>

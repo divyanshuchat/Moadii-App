@@ -1,0 +1,56 @@
+page-speaker-list {
+
+.bar-button-default-md, .bar-button-clear-md-default, .bar-button-md-default {
+    color: #8aae0f;
+    background-color: transparent;
+}
+
+
+.toolbar .searchbar-ios .searchbar-input {
+    background: #ffffff;
+}
+.toolbar-md {
+    padding: 2px;
+    min-height: 55px;
+}
+  .scroll-content {
+    background: #EDEDED;
+  }
+
+  .speaker-card {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+
+    ion-card-content {
+      flex: 1 1 auto;
+    }
+  }
+
+  .speaker-card ion-card-header .item {
+    padding: 4px 16px;
+  }
+
+  .speaker-card ion-card-content {
+    padding-left: 0;
+    padding-right: 0;
+  }
+
+
+  ul {
+  padding: 0px;
+  //margin-top:-10px !important;
+
+  &.rating li {
+    padding: 5px 0px !important;
+    background: none;
+    color: #ffb400;
+    //margin-left: -20px;
+
+
+    ion-icon {
+      font-size: 18px;
+    }
+  }
+}
+}

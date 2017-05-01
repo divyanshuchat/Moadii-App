@@ -1,0 +1,26 @@
+<ion-header no-border>
+  <ion-navbar>
+    <ion-buttons end *ngIf="showSkip">
+      <button ion-button (click)="startApp()" color="primary">Skip
+        <ion-icon name="arrow-forward"></ion-icon>
+        </button>
+    </ion-buttons>
+  </ion-navbar>
+</ion-header>
+
+<ion-content text-center style="background-color: #C1D5E0;">
+ <div>
+    <img src="assets/img/logo.png" alt="Ionic logo" style="max-width: 50%">
+  </div>
+<div>
+<ion-avatar class="group-detail">
+<img src="assets/img/02.jpg" alt="About Moadii" style="max-width: 112%">
+</ion-avatar>
+<p padding style="margin-top: -240px; color: #ffffff;">
+Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut 
+labore et dolore magna aliqua. Ut enim ad minim veniam</p>
+<button ion-button block color="light" style="max-width: 90%;margin-left: 15px;">LOGIN</button>
+<p style="color: #ffffff;">
+NEW USER</p>
+ </div>
+</ion-content>

@@ -1,0 +1,79 @@
+<ion-header>
+  <ion-navbar>
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title><img src="assets/img/logo.png" alt="Ionic logo" style="max-width: 70px"></ion-title>
+
+
+  </ion-navbar>
+</ion-header>
+
+<ion-content>
+  <div>
+<ion-avatar class="group-detail">
+<img src="assets/img/03.jpg" alt="About Moadii" style="max-width: 100%;">
+</ion-avatar>
+<p padding text-right style="margin-top: -160px; color: #ffffff;padding-bottom: 3px;">
+Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut 
+labore et dolore magna aliqua. Ut enim ad minim veniam</p>
+</div>
+
+<ion-grid text-center style="padding-top: 0px;color: white;"> 
+                <ion-row wrap>
+                    <ion-col width-50>
+                      <div>
+                      <ion-icon name="mail" style="font-size: 1.9em;margin-top: -5px;"></ion-icon>
+                      <ion-label>info@moadii.com</ion-label>
+                      </div>
+                      </ion-col>
+                      <ion-col width-50>
+                      <div>
+                      <ion-icon name="call" style="font-size: 1.9em;margin-top: -5px;"></ion-icon>
+                      <ion-label>98918949984</ion-label>
+                      </div>
+                    </ion-col>
+                </ion-row>
+</ion-grid>
+<p style="padding-right: 10px;padding-left: 10px;">
+If you have any inquiries, you can send us Email:
+</p>
+<form #aboutForm="ngForm" novalidate>
+    <ion-list no-lines>
+      <ion-item>
+        <!-- <ion-label stacked color="primary">Your Name</ion-label> -->
+         <ion-icon name="logo-playstation"></ion-icon>
+        <ion-input [(ngModel)]="about.name" placeholder="Your Name" name="username" type="text" #name="ngModel" spellcheck="false" autocapitalize="off" required>
+        </ion-input>
+      </ion-item>
+      <p ion-text [hidden]="name.valid || submitted == false" color="danger" padding-left>
+        Name is required
+      </p>
+
+      <ion-item>
+        <!-- <ion-label stacked color="primary">Password</ion-label> -->
+        <ion-input [(ngModel)]="about.email" placeholder="Your Email" name="email" type="text" #email="ngModel" required>
+        </ion-input>
+      </ion-item>
+      <p ion-text [hidden]="email.valid || submitted == false" color="danger" padding-left>
+        Email is required
+      </p>
+    
+          <ion-item>
+          <ion-textarea [(ngModel)]="about.message" rows="4" maxlength="50" placeholder="Your Message" name="email" #message="ngModel" required></ion-textarea>
+        </ion-item>
+    </ion-list>
+   
+      <button ion-button (click)="onLogin(aboutForm)" type="submit" block color="primary">Send</button>
+   
+    <!-- <ion-row responsive-sm>
+      <ion-col> -->
+        <!-- <button ion-button (click)="onLogin(loginForm)" type="submit" block color="light" style="margin-top:25px">Login</button> -->
+      <!-- </ion-col>
+      <ion-col>
+        <button ion-button (click)="onSignup()" color="light" block>Signup</button>
+      </ion-col>
+    </ion-row> -->
+  </form>
+
+</ion-content>

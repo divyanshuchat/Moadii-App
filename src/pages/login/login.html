@@ -12,13 +12,13 @@
 		<img src="assets/img/logo.png" alt="Ionic logo">
 	</div>
 
-	<form #loginForm="ngForm" novalidate>
+	<form #loginForm="ngForm" class="cust-form" novalidate>
 		<ion-list no-lines>
 			<ion-item>
 				<ion-label stacked color="primary">Login Name</ion-label>
-				 
-				<ion-input [(ngModel)]="login.username" placeholder="Your login name" name="username" type="text" #username="ngModel" spellcheck="false" autocapitalize="off" ion-icon name="mail"
-					required><ion-icon name="mail"></ion-icon>
+				<ion-icon name="ios-mail" item-left class="cust-icon"></ion-icon>
+
+				<ion-input [(ngModel)]="login.username" placeholder="Your login name" name="username" type="text" #username="ngModel" spellcheck="false" autocapitalize="off" class="cust-input" required>
 				</ion-input>
 			</ion-item>
 			<p ion-text [hidden]="username.valid || submitted == false" color="danger" padding-left>
@@ -27,8 +27,11 @@
 
 			<ion-item>
 				<ion-label stacked color="primary">Password</ion-label>
-				<ion-input [(ngModel)]="login.password" placeholder="Your password" name="password" type="password" #password="ngModel" required>
-				</ion-input>
+				
+					<ion-icon name="ios-lock" item-left class="cust-icon"></ion-icon>
+					<ion-input [(ngModel)]="login.password" placeholder="Your password" name="password" type="password" #password="ngModel" class="cust-input" required>
+					</ion-input>
+				
 			</ion-item>
 			<p ion-text [hidden]="password.valid || submitted == false" color="danger" padding-left>
 				Password is required

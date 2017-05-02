@@ -19,6 +19,8 @@ import { SupportPage } from '../pages/support/support';
 import { ConferenceData } from '../providers/conference-data';
 import { UserData } from '../providers/user-data';
 
+import { SearchDoctors } from '../pages/search-doctors/search-doctors';
+
 export interface PageInterface {
   title: string;
   name: string;

@@ -37,6 +37,8 @@ import { File } from '@ionic-native/file';
 import { Transfer } from '@ionic-native/transfer';
 import { FileChooser } from '@ionic-native/file-chooser';
 
+import { SearchDoctors } from '../pages/search-doctors/search-doctors';
+
 @NgModule({
   declarations: [
     ConferenceApp,
@@ -53,7 +55,8 @@ import { FileChooser } from '@ionic-native/file-chooser';
     SpeakerListPage,
     TabsPage,
     TutorialPage,
-    SupportPage
+    SupportPage,
+    SearchDoctors
   ],
   imports: [
     BrowserModule,
@@ -94,7 +97,8 @@ import { FileChooser } from '@ionic-native/file-chooser';
     SpeakerListPage,
     TabsPage,
     TutorialPage,
-    SupportPage
+    SupportPage,
+    SearchDoctors
   ],
   providers: [
     { provide: ErrorHandler, useClass: IonicErrorHandler},

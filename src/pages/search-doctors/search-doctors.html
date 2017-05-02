@@ -1,0 +1,29 @@
+<!--
+	Generated template for the SearchDoctors page.
+
+	See http://ionicframework.com/docs/components/#navigation for more info on
+	Ionic pages and navigation.
+-->
+<ion-header>
+
+	<ion-navbar>
+		<ion-title>Search Doctors</ion-title>
+	</ion-navbar>
+
+	<ion-toolbar no-border-top>
+        <ion-searchbar color="primary" [(ngModel)]="searchQuery" (ionInput)="getSearchedDoctors($event)" (ionClear)="clearSearch($event)" placeholder="Search"></ion-searchbar>
+    </ion-toolbar>
+
+</ion-header>
+
+<ion-content padding>
+	<ion-list no-lines>
+		<ion-item *ngFor="let doctor of doctors" class="cust-item">
+			<ion-avatar>
+				<img src="assets/img/doctor.png">
+			</ion-avatar>
+			<h2 item-right>{{ doctor.Name }}</h2>
+		</ion-item>
+	</ion-list>
+
+</ion-content>

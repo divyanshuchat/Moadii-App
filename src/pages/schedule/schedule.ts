@@ -15,6 +15,9 @@ import { TabsPage } from '../tabs/tabs';
 import { SessionDetailPage } from '../session-detail/session-detail';
 import { ScheduleFilterPage } from '../schedule-filter/schedule-filter';
 
+import { SearchDoctors } from '../search-doctors/search-doctors';
+
+
 
 @Component({
   selector: 'page-schedule',
@@ -122,4 +125,20 @@ export class SchedulePage {
     });
     loading.present();
   }
+
+    goToSearchHospitalsPage() {
+
+    }
+
+    goToSearchDispensariesPage() {
+
+    }
+
+    goToSearchDoctorsPage() {
+        this.navCtrl.push(SearchDoctors);
+    }
+
+    goToSearchPrivateClinicsPage() {
+
+    }
 }

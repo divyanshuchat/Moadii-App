@@ -22,7 +22,7 @@
 			<ion-item>
 				<ion-label stacked color="primary">Full Name</ion-label>
 				<ion-icon name="person" item-left class="cust-icon"></ion-icon>
-				<ion-input [(ngModel)]="signup.username" name="username" type="text" #username="ngModel"
+				<ion-input [(ngModel)]="signup.fullname" name="fullname" type="text" #fullname="ngModel"
 				class="cust-input" required>
 				</ion-input>
 			</ion-item>
@@ -43,7 +43,7 @@
 			<ion-item>
 				<ion-label stacked color="primary">Email</ion-label>
 				<ion-icon name="mail" item-left class="cust-icon"></ion-icon>
-				<ion-input [(ngModel)]="signup.username" name="username" type="text" #username="ngModel" class="cust-input" required>
+				<ion-input [(ngModel)]="signup.email" name="email" type="text" #email="ngModel" class="cust-input" required>
 				</ion-input>
 			</ion-item>
 			<p ion-text [hidden]="username.valid || submitted == false" color="danger" padding-left>

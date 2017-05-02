@@ -22,7 +22,7 @@
 			<ion-item>
 				<ion-label stacked color="primary">Full Name</ion-label>
 				<ion-icon name="person" item-left class="cust-icon"></ion-icon>
-				<ion-input [(ngModel)]="signup.username" name="username" type="text" #username="ngModel"
+				<ion-input [(ngModel)]="signup.fullname" name="fullname" type="text" #fullname="ngModel"
 				class="cust-input" required>
 				</ion-input>
 			</ion-item>
@@ -43,7 +43,7 @@
 			<ion-item>
 				<ion-label stacked color="primary">Email</ion-label>
 				<ion-icon name="mail" item-left class="cust-icon"></ion-icon>
-				<ion-input [(ngModel)]="signup.username" name="username" type="text" #username="ngModel" class="cust-input" required>
+				<ion-input [(ngModel)]="signup.email" name="email" type="text" #email="ngModel" class="cust-input" required>
 				</ion-input>
 			</ion-item>
 			<p ion-text [hidden]="username.valid || submitted == false" color="danger" padding-left>
@@ -70,17 +70,37 @@
 				
 			</ion-item>
 
-			<ion-item>
+			<!-- Country with input type=text<ion-item>
 				<ion-label stacked color="primary">Country</ion-label>
 				<ion-icon name="pin" item-left class="cust-icon"></ion-icon>
-				<ion-input [(ngModel)]="signup.country" name="country" type="text" #country="ngModel" class="cust-input" required>
-				</ion-input>
+				<ion-input [(ngModel)]="signup.country" name="country" type="text" #country="ngModel" class="cust-input" required></ion-input>
 			</ion-item>
 			<p ion-text [hidden]="country.valid || submitted == false" color="danger" padding-left>
 				Country is required
-			</p>
+			</p> -->
 
 			<ion-item>
+				<ion-label stacked color="primary">Country</ion-label>
+				<ion-icon name="pin" item-left class="cust-icon"></ion-icon>
+
+				<ion-select [(ngModel)]="signup.country" name="country" interface="popover" class="cust-select">
+					<ion-option value="{{ country.CountryID }}" *ngFor="let country of countries" (ionSelect)="getGovernorate($event)">{{ country.CountryName }}</ion-option>
+				</ion-select>
+			</ion-item>
+
+			<ion-item>
+				<ion-label stacked color="primary">Governorate</ion-label>
+				<ion-icon name="pin" item-left class="cust-icon"></ion-icon>
+
+				<ion-select [(ngModel)]="signup.governorate" name="governorate" interface="popover" class="cust-select">
+				{{governorates}}
+					<ion-option value="{{ governorate.GovID }}" *ngFor="let governorate of governorates" (ionSelect)="getCity($event)">{{ governorate.GovName }}</ion-option>
+				}
+				}
+				</ion-select>
+			</ion-item>
+
+			<!-- Governorate with input type=text<ion-item>
 				<ion-label stacked color="primary">Governorate</ion-label>
 				<ion-icon name="pin" item-left class="cust-icon"></ion-icon>
 				<ion-input [(ngModel)]="signup.governorate" name="governorate" type="text" #governorate="ngModel" class="cust-input" required>
@@ -88,14 +108,23 @@
 			</ion-item>
 			<p ion-text [hidden]="governorate.valid || submitted == false" color="danger" padding-left>
 				Governorate is required
-			</p>
+			</p>-->
+
 
 			<ion-item>
 				<ion-label stacked color="primary">City(optional)</ion-label>
 				<ion-icon name="pin" item-left class="cust-icon"></ion-icon>
+
+				<ion-select [(ngModel)]="signup.city" name="city" interface="popover" class="cust-select">
+					<ion-option value="{{ city.CityID }}" *ngFor="let city of cities">{{ city.CityName }}</ion-option>
+				</ion-select>
+			</ion-item>
+			<!-- City with input type=text<ion-item>
+				<ion-label stacked color="primary">City(optional)</ion-label>
+				<ion-icon name="pin" item-left class="cust-icon"></ion-icon>
 				<ion-input [(ngModel)]="signup.city" name="city" type="text" #city="ngModel" class="cust-input" required>
 				</ion-input>
-			</ion-item>
+			</ion-item>-->
 
 			<ion-item>
 				<ion-label stacked color="primary">Mobile No.</ion-label>

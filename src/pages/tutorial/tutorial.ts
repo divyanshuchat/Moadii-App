@@ -4,6 +4,9 @@ import { MenuController, NavController, Slides } from 'ionic-angular';
 
 import { Storage } from '@ionic/storage';
 
+import { LoginPage } from '../login/login';
+import { SignupPage } from '../signup/signup';
+
 import { TabsPage } from '../tabs/tabs';
 
 @Component({
@@ -33,7 +36,7 @@ export class TutorialPage {
   }
 
 	ionViewWillEnter() {
-		this.slides.update();
+		// this.slides.update();
 	}
 
   ionViewDidEnter() {
@@ -46,4 +49,13 @@ export class TutorialPage {
     this.menu.enable(true);
   }
 
+  loginpage()
+  {
+    this.navCtrl.setRoot(LoginPage);
+  }
+
+  registerpage()
+  {
+    this.navCtrl.setRoot(SignupPage);
+  }
 }

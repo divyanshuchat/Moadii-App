@@ -15,6 +15,9 @@ import { TabsPage } from '../tabs/tabs';
 import { SessionDetailPage } from '../session-detail/session-detail';
 import { ScheduleFilterPage } from '../schedule-filter/schedule-filter';
 
+import { SearchDoctors } from '../search-doctors/search-doctors';
+
+
 
 @Component({
   selector: 'page-schedule',
@@ -55,71 +58,22 @@ export class SchedulePage {
     this.navCtrl.parent.select(1);
   }
 
-  addFavorite(slidingItem: ItemSliding, sessionData: any) {
 
-    if (this.user.hasFavorite(sessionData.name)) {
-      // woops, they already favorited it! What shall we do!?
-      // prompt them to remove it
-      this.removeFavorite(slidingItem, sessionData, 'Favorite already added');
-    } else {
-      // remember this session as a user favorite
-      this.user.addFavorite(sessionData.name);
+  
 
-      // create an alert instance
-      let alert = this.alertCtrl.create({
-        title: 'Favorite Added',
-        buttons: [{
-          text: 'OK',
-          handler: () => {
-            // close the sliding item
-            slidingItem.close();
-          }
-        }]
-      });
-      // now present the alert on top of all other content
-      alert.present();
+    goToSearchHospitalsPage() {
+
     }
 
-  }
+    goToSearchDispensariesPage() {
 
-  removeFavorite(slidingItem: ItemSliding, sessionData: any, title: string) {
-    let alert = this.alertCtrl.create({
-      title: title,
-      message: 'Would you like to remove this session from your favorites?',
-      buttons: [
-        {
-          text: 'Cancel',
-          handler: () => {
-            // they clicked the cancel button, do not remove the session
-            // close the sliding item and hide the option buttons
-            slidingItem.close();
-          }
-        },
-        {
-          text: 'Remove',
-          handler: () => {
-            // they want to remove this session from their favorites
-            this.user.removeFavorite(sessionData.name);
-        
+    }
 
-            // close the sliding item and hide the option buttons
-            slidingItem.close();
-          }
-        }
-      ]
-    });
-    // now present the alert on top of all other content
-    alert.present();
-  }
+    goToSearchDoctorsPage() {
+        this.navCtrl.parent.select(2);
+    }
 
-  openSocial(network: string, fab: FabContainer) {
-    let loading = this.loadingCtrl.create({
-      content: `Posting to ${network}`,
-      duration: (Math.random() * 1000) + 500
-    });
-    loading.onWillDismiss(() => {
-      fab.close();
-    });
-    loading.present();
-  }
+    goToSearchPrivateClinicsPage() {
+
+    }
 }

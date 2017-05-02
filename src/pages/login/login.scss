@@ -25,4 +25,38 @@ page-user {
   .list {
     margin-bottom: 0;
   }
+
+  .cust-icon {
+    position: absolute;
+    // left: 0.55em;
+    left: 0.59em;
+    border-right: 1px solid rgba(0,0,0,0.4);
+    // height: 1.35em;
+    height: 1.3em;
+    line-height: 1.3em;
+    background-color: #C1D5E0;
+    border-top-left-radius: 10px;
+    border-bottom-left-radius: 10px;
+    width: 1.5em;
+    top: 0.73em;
+  }
+
+
+  .cust-input {
+    padding-left: 2.7em;
+  }
+
+  button {
+        
+  }
+
+  .button-block {
+    margin-left: 1em;
+    width: 92%;
+  }
+
+  .cust-form {
+    top: -2em;
+    position: relative;
+  }
 }

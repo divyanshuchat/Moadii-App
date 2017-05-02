@@ -9,15 +9,21 @@
 
 <ion-content class="login-page">
 
-	<div class="logo">
+	<!-- <div class="logo">
 		<img src="assets/img/logo.png" alt="Moadii Logo">
+	</div> -->
+	
+	<div class="img-upload">
+		<img src="assets/img/profileimage.png" (click)="openMenuGetImage()">
 	</div>
 
 	<form #signupForm="ngForm" novalidate>
 		<ion-list no-lines>
 			<ion-item>
 				<ion-label stacked color="primary">Full Name</ion-label>
-				<ion-input [(ngModel)]="signup.username" name="username" type="text" #username="ngModel" required>
+				<ion-icon name="person" item-left class="cust-icon"></ion-icon>
+				<ion-input [(ngModel)]="signup.username" name="username" type="text" #username="ngModel"
+				class="cust-input" required>
 				</ion-input>
 			</ion-item>
 			<p ion-text [hidden]="username.valid || submitted == false" color="danger" padding-left>
@@ -26,7 +32,8 @@
 
 			<ion-item>
 				<ion-label stacked color="primary">Login Name</ion-label>
-				<ion-input [(ngModel)]="signup.username" name="username" type="text" #username="ngModel" required>
+				<ion-icon name="person" item-left class="cust-icon"></ion-icon>
+				<ion-input [(ngModel)]="signup.username" name="username" type="text" #username="ngModel" class="cust-input" required>
 				</ion-input>
 			</ion-item>
 			<p ion-text [hidden]="username.valid || submitted == false" color="danger" padding-left>
@@ -35,7 +42,8 @@
 
 			<ion-item>
 				<ion-label stacked color="primary">Email</ion-label>
-				<ion-input [(ngModel)]="signup.username" name="username" type="text" #username="ngModel" required>
+				<ion-icon name="mail" item-left class="cust-icon"></ion-icon>
+				<ion-input [(ngModel)]="signup.username" name="username" type="text" #username="ngModel" class="cust-input" required>
 				</ion-input>
 			</ion-item>
 			<p ion-text [hidden]="username.valid || submitted == false" color="danger" padding-left>
@@ -44,12 +52,61 @@
 
 			<ion-item>
 				<ion-label stacked color="primary">Password</ion-label>
-				<ion-input [(ngModel)]="signup.password" name="password" type="password" #password="ngModel" required>
+				<ion-icon name="lock" item-left class="cust-icon"></ion-icon>
+				<ion-input [(ngModel)]="signup.password" name="password" type="password" #password="ngModel" class="cust-input" required>
 				</ion-input>
 			</ion-item>
 			<p ion-text [hidden]="password.valid || submitted == false" color="danger" padding-left>
 				Password is required
 			</p>
+
+			<ion-item>
+				<ion-label stacked color="primary">Gender(optional)</ion-label>
+
+				<ion-select [(ngModel)]="gender" name="gender" interface="popover">
+					<ion-option value="f">Female</ion-option>
+					<ion-option value="m">Male</ion-option>
+				</ion-select>
+				
+			</ion-item>
+
+			<ion-item>
+				<ion-label stacked color="primary">Country</ion-label>
+				<ion-icon name="pin" item-left class="cust-icon"></ion-icon>
+				<ion-input [(ngModel)]="signup.country" name="country" type="text" #country="ngModel" class="cust-input" required>
+				</ion-input>
+			</ion-item>
+			<p ion-text [hidden]="country.valid || submitted == false" color="danger" padding-left>
+				Country is required
+			</p>
+
+			<ion-item>
+				<ion-label stacked color="primary">Governorate</ion-label>
+				<ion-icon name="pin" item-left class="cust-icon"></ion-icon>
+				<ion-input [(ngModel)]="signup.governorate" name="governorate" type="text" #governorate="ngModel" class="cust-input" required>
+				</ion-input>
+			</ion-item>
+			<p ion-text [hidden]="governorate.valid || submitted == false" color="danger" padding-left>
+				Governorate is required
+			</p>
+
+			<ion-item>
+				<ion-label stacked color="primary">City(optional)</ion-label>
+				<ion-icon name="pin" item-left class="cust-icon"></ion-icon>
+				<ion-input [(ngModel)]="signup.city" name="city" type="text" #city="ngModel" class="cust-input" required>
+				</ion-input>
+			</ion-item>
+
+			<ion-item>
+				<ion-label stacked color="primary">Mobile No.</ion-label>
+				<ion-icon name="call" item-left class="cust-icon"></ion-icon>
+				<ion-input [(ngModel)]="signup.mobile" name="mobile" type="text" #mobile="ngModel" class="cust-input" required>
+				</ion-input>
+			</ion-item>
+			<p ion-text [hidden]="mobile.valid || submitted == false" color="danger" padding-left>
+				Mobile number is required
+			</p>
+
 		</ion-list>
 
 		<div padding>

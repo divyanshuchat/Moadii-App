@@ -9,7 +9,7 @@ import { TabsPage } from '../tabs/tabs';
 
 import { Platform, ActionSheetController } from 'ionic-angular';
 
-import { Camera, File, Transfer, FileChooser } from 'ionic-native';
+// import { Camera, File, Transfer, FileChooser } from 'ionic-native';
 
 import { Http, Headers, RequestOptions } from '@angular/http';
 
@@ -37,85 +37,85 @@ export class SignupPage {
   }
 
   openMenuGetImage() {
-    let actionSheet = this.actionsheetCtrl.create({
-      title: "Upload Image",
-      buttons: [
-      {
-        text: "Gallery",
-        icon: !this.platform.is('ios') ? 'images' : null,
-        handler: ()=> {
-          let options = {
-            destinationType: Camera.destinationType.FILE_URI,
-            sourceType: Camera.PictureSourceType.PHOTOLIBRARY
-          };
-          Camera.getPicture(options).then(
-            (imageData: any) => {
-              this.uploadImageToServer(imageData);
-            },
-            (err: any) => {
-              //Handle Error
-            });
-        }
-      },
-      {
-        text: "Camera",
-        icon: !this.platform.is('ios') ? 'camera' : null,
+  //   let actionSheet = this.actionsheetCtrl.create({
+  //     title: "Upload Image",
+  //     buttons: [
+  //     {
+  //       text: "Gallery",
+  //       icon: !this.platform.is('ios') ? 'images' : null,
+  //       handler: ()=> {
+  //         let options = {
+  //           destinationType: Camera.destinationType.FILE_URI,
+  //           sourceType: Camera.PictureSourceType.PHOTOLIBRARY
+  //         };
+  //         Camera.getPicture(options).then(
+  //           (imageData: any) => {
+  //             this.uploadImageToServer(imageData);
+  //           },
+  //           (err: any) => {
+  //             //Handle Error
+  //           });
+  //       }
+  //     },
+  //     {
+  //       text: "Camera",
+  //       icon: !this.platform.is('ios') ? 'camera' : null,
 
-        handler: () => {
-          let options = {
-            destinationType: Camera.DestinationType.FILE_URI,
-            sourceType: Camera.PictureSourceType.PHOTOLIBRARY
-          };
+  //       handler: () => {
+  //         let options = {
+  //           destinationType: Camera.DestinationType.FILE_URI,
+  //           sourceType: Camera.PictureSourceType.PHOTOLIBRARY
+  //         };
 
-          Camera.getPicture(options).then(
-            (imageData: any) => {
-               this.uploadImageToServer(imageData);
+  //         Camera.getPicture(options).then(
+  //           (imageData: any) => {
+  //              this.uploadImageToServer(imageData);
 
-            },
-            (err: any) => {
-              //Handle Error
-            });
-        }
-      },
+  //           },
+  //           (err: any) => {
+  //             //Handle Error
+  //           });
+  //       }
+  //     },
 
-      {
-        text: "Cancel",
-        role: 'cancel',
-        icon: !this.platform.is('ios') ? 'close' : null,
-        handler: () => {
-          console.log('Cancel Cicked');
-        }
-      }
+  //     {
+  //       text: "Cancel",
+  //       role: 'cancel',
+  //       icon: !this.platform.is('ios') ? 'close' : null,
+  //       handler: () => {
+  //         console.log('Cancel Cicked');
+  //       }
+  //     }
 
         
-      ]  //Button Array Closed
-    });
-    actionSheet.present();
+  //     ]  //Button Array Closed
+  //   });
+  //   actionSheet.present();
   }
 
   uploadImageToServer(filepath: any) {
 
        
        
-       const fileTransfer = new Transfer();
-       var options: any;
-       options = {
-           fileKey: 'file',
-           fileName: /*Select the filename*/'abc',
-           mimeType: 'image/jpeg',
-           headers: {}
-       };
+  //      const fileTransfer = new Transfer();
+  //      var options: any;
+  //      options = {
+  //          fileKey: 'file',
+  //          fileName: /*Select the filename*/'abc',
+  //          mimeType: 'image/jpeg',
+  //          headers: {}
+  //      };
 
-       fileTransfer.upload(filepath, "https://knockapp.eytech.co/photoupload.php", options)
-           .then((data: any) => {
-               //console.log(data);
+  //      fileTransfer.upload(filepath, "https://knockapp.eytech.co/photoupload.php", options)
+  //          .then((data: any) => {
+  //              //console.log(data);
                
-               /*this.userpic="https://knockapp.eytech.co/img/"+this.signupData.userid+".jpg";
-               console.log("userpic is" + this.signupData.userpic);
-               setTimeout(function(){this.navCtrl.setRoot(ProfilePage, {signup_data: this.signupData});},1000);*/
+  //              /*this.userpic="https://knockapp.eytech.co/img/"+this.signupData.userid+".jpg";
+  //              console.log("userpic is" + this.signupData.userpic);
+  //              setTimeout(function(){this.navCtrl.setRoot(ProfilePage, {signup_data: this.signupData});},1000);*/
                
-           }, (err: any) => {
-               //console.log(err);
-           });
+  //          }, (err: any) => {
+  //              //console.log(err);
+  //          });
    }
 }

@@ -4,7 +4,7 @@ import { NgModule, ErrorHandler } from '@angular/core';
 
 import { IonicApp, IonicModule, IonicErrorHandler } from 'ionic-angular';
 
-import { InAppBrowser } from '@ionic-native/in-app-browser';
+// import { InAppBrowser } from '@ionic-native/in-app-browser';
 import { SplashScreen } from '@ionic-native/splash-screen';
 
 import { IonicStorageModule } from '@ionic/storage';
@@ -29,7 +29,10 @@ import { SupportPage } from '../pages/support/support';
 import { ConferenceData } from '../providers/conference-data';
 import { UserData } from '../providers/user-data';
 
-import { Ionic2RatingModule } from 'ionic2-rating';
+// import { Ionic2RatingModule } from 'ionic2-rating';
+// import { Camera } from '@ionic-native/camera';
+
+// import { BrowserModule } from '@angular/platform-browser';
 
 
 @NgModule({
@@ -71,7 +74,7 @@ import { Ionic2RatingModule } from 'ionic2-rating';
       ]
     }),
     IonicStorageModule.forRoot(),
-    Ionic2RatingModule
+    // Ionic2RatingModule
   ],
   bootstrap: [IonicApp],
   entryComponents: [
@@ -95,8 +98,9 @@ import { Ionic2RatingModule } from 'ionic2-rating';
     { provide: ErrorHandler, useClass: IonicErrorHandler },
     ConferenceData,
     UserData,
-    InAppBrowser,
-    SplashScreen
+    // InAppBrowser,
+    SplashScreen,
+    // Camera
   ]
 })
 export class AppModule { }

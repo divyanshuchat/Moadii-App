@@ -32,6 +32,11 @@ import { UserData } from '../providers/user-data';
 import { Ionic2RatingModule } from 'ionic2-rating';
 
 
+import { Camera } from '@ionic-native/camera';
+import { File } from '@ionic-native/file';
+import { Transfer } from '@ionic-native/transfer';
+import { FileChooser } from '@ionic-native/file-chooser';
+
 @NgModule({
   declarations: [
     ConferenceApp,
@@ -92,11 +97,15 @@ import { Ionic2RatingModule } from 'ionic2-rating';
     SupportPage
   ],
   providers: [
-    { provide: ErrorHandler, useClass: IonicErrorHandler },
+    { provide: ErrorHandler, useClass: IonicErrorHandler},
     ConferenceData,
     UserData,
     InAppBrowser,
-    SplashScreen
+    SplashScreen,
+    Camera,
+    File,
+    Transfer,
+    FileChooser,
   ]
 })
 export class AppModule { }

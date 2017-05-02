@@ -9,7 +9,13 @@ import { TabsPage } from '../tabs/tabs';
 
 import { Platform, ActionSheetController } from 'ionic-angular';
 
-import { Camera, File, Transfer, FileChooser } from 'ionic-native';
+import { Camera, CameraOptions } from '@ionic-native/camera';
+
+import { File } from '@ionic-native/file';
+
+import { Transfer, FileUploadOptions, TransferObject } from '@ionic-native/transfer';
+
+import { FileChooser } from '@ionic-native/file-chooser';
 
 import { Http, Headers, RequestOptions } from '@angular/http';
 
@@ -25,7 +31,7 @@ export class SignupPage {
   selectOptions: any;
 
   constructor(public navCtrl: NavController, public userData: UserData, public platform: Platform,
-    public actionsheetCtrl: ActionSheetController, public http: Http) {}
+    public actionsheetCtrl: ActionSheetController, public http: Http, private file: File, private fileChooser: FileChooser, private transfer: Transfer, private camera: Camera) {}
 
   onSignup(form: NgForm) {
     this.submitted = true;
@@ -44,11 +50,11 @@ export class SignupPage {
         text: "Gallery",
         icon: !this.platform.is('ios') ? 'images' : null,
         handler: ()=> {
-          let options = {
-            destinationType: Camera.destinationType.FILE_URI,
-            sourceType: Camera.PictureSourceType.PHOTOLIBRARY
+          let options: CameraOptions = {
+            destinationType: this.camera.DestinationType.FILE_URI,
+            sourceType: this.camera.PictureSourceType.PHOTOLIBRARY
           };
-          Camera.getPicture(options).then(
+          this.camera.getPicture(options).then(
             (imageData: any) => {
               this.uploadImageToServer(imageData);
             },
@@ -62,12 +68,12 @@ export class SignupPage {
         icon: !this.platform.is('ios') ? 'camera' : null,
 
         handler: () => {
-          let options = {
-            destinationType: Camera.DestinationType.FILE_URI,
-            sourceType: Camera.PictureSourceType.PHOTOLIBRARY
+          let options: CameraOptions = {
+            destinationType: this.camera.DestinationType.FILE_URI,
+            sourceType: this.camera.PictureSourceType.PHOTOLIBRARY
           };
 
-          Camera.getPicture(options).then(
+          this.camera.getPicture(options).then(
             (imageData: any) => {
                this.uploadImageToServer(imageData);
 
@@ -97,8 +103,8 @@ export class SignupPage {
 
        
        
-       const fileTransfer = new Transfer();
-       var options: any;
+       const fileTransfer: TransferObject = this.transfer.create();
+       var options: FileUploadOptions;
        options = {
            fileKey: 'file',
            fileName: /*Select the filename*/'abc',

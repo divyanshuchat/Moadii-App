@@ -30,6 +30,8 @@
     "@ionic-native/status-bar": "3.6.1",
     "@ionic-native/transfer": "^3.6.1",
     "@ionic/storage": "2.0.1",
+    "@types/cryptojs": "^3.1.29",
+    "crypto-js": "^3.1.9-1",
     "ionic-angular": "3.1.1",
     "ionic2-rating": "^1.2.2",
     "ionicons": "3.0.0",

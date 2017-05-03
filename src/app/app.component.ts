@@ -72,25 +72,24 @@ export class ConferenceApp {
     public splashScreen: SplashScreen
   ) {
 
-    // Check if the user has already seen the tutorial
-    this.storage.get('hasSeenTutorial')
-      .then((hasSeenTutorial) => {
-        if (hasSeenTutorial) {
-          this.rootPage = TutorialPage;
-        } else {
-          this.rootPage = TutorialPage;
-        }
-        this.platformReady()
-      });
+    // Check if the user has already seen logged in
+   
+       this.storage.get('hasLoggedIn')
+     .then((hasLoggedIn) =>{
+       if (hasLoggedIn)
+       {
+           //this.userData.hasLoggedIn().then((hasLoggedIn) => {
+           this.rootPage = TabsPage;
+           this.enableMenu(hasLoggedIn === true);
+           //});
+       } else {
+         this.rootPage = TutorialPage;
+         this.enableMenu(hasLoggedIn === false);
+       }
+       this.platformReady()
+     })
 
-    // load the conference data
-    confData.load();
-
-    // decide which menu items should be hidden by current login status stored in local storage
-    this.userData.hasLoggedIn().then((hasLoggedIn) => {
-      this.enableMenu(hasLoggedIn === true);
-    });
-    this.enableMenu(true);
+   
 
     this.listenToLoginEvents();
   }

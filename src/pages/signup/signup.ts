@@ -19,6 +19,10 @@ import { FileChooser } from '@ionic-native/file-chooser';
 
 import { Http, Headers, RequestOptions } from '@angular/http';
 
+declare var require: any;
+//Import for MD5
+import { CryptoJS } from 'crypto-js';
+
 
 @Component({
   selector: 'page-user',
@@ -33,6 +37,9 @@ export class SignupPage {
   governorates: Array<object> = [];
   cities: Array<object> = [];
 
+  private CryptoJS: any;
+
+
   constructor(
             public navCtrl: NavController, 
             public userData: UserData,
@@ -44,7 +51,10 @@ export class SignupPage {
             private transfer: Transfer,
             private camera: Camera
             ) {
+                this.CryptoJS = require("crypto-js");
                 this.getCountry();
+                let obj = this.CryptoJS.enc.Base64.stringify(this.CryptoJS.MD5("Message", "Key"));
+                console.log(obj);
 
   }
 

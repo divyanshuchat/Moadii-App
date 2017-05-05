@@ -8,6 +8,7 @@ import { LoginPage } from '../login/login';
 import { SignupPage } from '../signup/signup';
 
 import { TabsPage } from '../tabs/tabs';
+import {TranslateService, TranslatePipe} from '@ngx-translate/core';
 
 @Component({
   selector: 'page-tutorial',
@@ -22,8 +23,10 @@ export class TutorialPage {
   constructor(
     public navCtrl: NavController,
     public menu: MenuController,
-    public storage: Storage
-  ) { }
+    public storage: Storage,
+    public translateService: TranslateService
+  ) {    translateService.use('ar');
+    }
 
   startApp() {
     this.navCtrl.push(TabsPage).then(() => {

@@ -38,6 +38,9 @@ import { Transfer } from '@ionic-native/transfer';
 import { FileChooser } from '@ionic-native/file-chooser';
 
 import { SearchDoctors } from '../pages/search-doctors/search-doctors';
+import { Doctorsdetails } from '../pages/doctorsdetails/doctorsdetails';
+
+import { CreateReservation } from '../pages/create-reservation/create-reservation';
 
 @NgModule({
   declarations: [
@@ -56,12 +59,18 @@ import { SearchDoctors } from '../pages/search-doctors/search-doctors';
     TabsPage,
     TutorialPage,
     SupportPage,
-    SearchDoctors
+    SearchDoctors,
+    Doctorsdetails,
+    CreateReservation
   ],
   imports: [
     BrowserModule,
     HttpModule,
-    IonicModule.forRoot(ConferenceApp, {}, {
+    IonicModule.forRoot(ConferenceApp, {
+        backButtonText: '',
+        backButtonIcon: 'arrow-round-back'
+    }, 
+    {
       links: [
         { component: TabsPage, name: 'Tabs', segment: 'tabs' },
         { component: SchedulePage, name: 'Schedule', segment: 'schedule' },
@@ -98,7 +107,9 @@ import { SearchDoctors } from '../pages/search-doctors/search-doctors';
     TabsPage,
     TutorialPage,
     SupportPage,
-    SearchDoctors
+    SearchDoctors,
+    Doctorsdetails,
+    CreateReservation
   ],
   providers: [
     { provide: ErrorHandler, useClass: IonicErrorHandler},

@@ -23,7 +23,7 @@
 
 <ion-content padding>
 	<ion-list no-lines>
-		<ion-item *ngFor="let doctor of doctors" class="cust-item">
+		<ion-item *ngFor="let doctor of doctors" class="cust-item" (click)="goToDoctorDetails(doctor)">
 		
 			<ion-avatar>
 				<img src="{{doctor.DoctorImage}}" style="width: 60px;height: 60px;">

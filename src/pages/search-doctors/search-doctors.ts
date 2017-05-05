@@ -3,6 +3,8 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
 
 import { Http, Headers, RequestOptions } from '@angular/http';
 
+import { Doctorsdetails } from '../doctorsdetails/doctorsdetails';
+
 /**
  * Generated class for the SearchDoctors page.
  *
@@ -62,6 +64,10 @@ export class SearchDoctors {
 
 	clearSearch(event: any) {		
 		console.log(event);
+	}
+
+	goToDoctorDetails(doctor: any) {
+		this.navCtrl.push(Doctorsdetails, {doctor: doctor});
 	}
 
 }

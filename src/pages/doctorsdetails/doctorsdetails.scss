@@ -1,3 +1,39 @@
 page-doctorsdetails {
+	.grid, .row, .col {
+		padding: 0;
+	}
+	.intro-img {
+		width: 100vw;
+		height: 35vh;
+		background: url("http://www.moadii.com/uploads/hospitals/thumb/c8e774c4-3601-46de-af41-38f5005b52fc.jpg") no-repeat center;
+		background-size: cover;
+		
+		.dr-name {
+			text-align: center;
+			line-height: 15.2;
+			margin: 0;
+		}
+	}
 
+	button {
+		margin-top: 0.2em !important;
+		margin-bottom: 0em !important;
+		//margin-bottom: 0!important;
+	}
+
+	ul {
+		padding: 0px;
+		margin-left: 3em;
+
+		&.rating li {
+			//padding: 5px 10px !important;
+			padding: 0 !important;
+			background: none;
+			color: #ffb400;
+
+			ion-icon {
+				font-size: 1.5em;
+			}
+		}
+	}
 }

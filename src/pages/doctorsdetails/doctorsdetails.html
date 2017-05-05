@@ -11,12 +11,58 @@
    <button ion-button menuToggle>
       <ion-icon name="menu"></ion-icon>
     </button>
-    <ion-title></ion-title>
+    <ion-title>Doctors</ion-title>
   </ion-navbar>
 
 </ion-header>
 
 
-<ion-content padding>
+<ion-content>
 
+	<ion-grid>
+		<ion-row>
+			<ion-col>
+				<div class="intro-img">
+				<!-- <h2 class="dr-name">{{ doctor.Name }}</h2> -->
+				</div>
+				<ion-fab bottom right edge>
+					<button ion-fab color="light" (click)="goToReservations(doctor)"><ion-icon name="calendar"></ion-icon></button>
+				</ion-fab>
+			</ion-col>
+		</ion-row>
+
+		<ion-row padding>
+			<ion-col col-5>
+				<h2 style="margin-top: 0.5em">{{ doctor.Name }}</h2>
+			</ion-col>
+
+			<ion-col>
+				<!-- Ratings -->
+				<rating  [(ngModel)]="rate" 
+	            readOnly="true" 
+	            max="5" 
+	            emptyStarIconName="star-outline" 
+	            halfStarIconName="star-half" 
+	            starIconName="star" 
+	            nullable="false" 
+	            (ngModelChange)="onModelChange($event)">	            	
+	            </rating>
+			</ion-col>
+		</ion-row>
+
+		<ion-row padding>
+			<h1>Rating</h1>
+		</ion-row>
+
+		<ion-row padding>
+			<ion-col>
+				<h3>Hospital</h3>
+			</ion-col>
+			<ion-col>
+				<h3>{{ doctor.HospitalName }}</h3>
+			</ion-col>
+		</ion-row>
+	</ion-grid>
+
+	<button ion-button block color="primary">Go To Hospital</button>
 </ion-content>

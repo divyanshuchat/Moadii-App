@@ -10,6 +10,8 @@ import { Http, Headers, RequestOptions } from '@angular/http';
 
 import { Ionic2RatingModule } from 'ionic2-rating';
 
+import { SearchDoctors } from '../search-doctors/search-doctors';
+
 @Component({
   selector: 'page-speaker-list',
   templateUrl: 'speaker-list.html'
@@ -58,5 +60,9 @@ export class SpeakerListPage {
         console.log(reservations);
         this.navCtrl.push(Doctorsdetails, {reservations});
       }
+
+  createNewReservation() {
+    this.navCtrl.push(SearchDoctors);
+  }
 
 }

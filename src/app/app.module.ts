@@ -38,7 +38,7 @@ import { Transfer } from '@ionic-native/transfer';
 import { FileChooser } from '@ionic-native/file-chooser';
 
 import { SearchDoctors } from '../pages/search-doctors/search-doctors';
-import { TranslateModule, TranslateLoader } from '@ngx-translate/core';
+import { TranslateModule, TranslateLoader, TranslatePipe } from '@ngx-translate/core';
 import { TranslateHttpLoader } from '@ngx-translate/http-loader';
 // import { TranslateStaticLoader, TranslatePipe  } from 'ng2-translate/ng2-translate';
 

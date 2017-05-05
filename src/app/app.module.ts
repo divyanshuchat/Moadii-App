@@ -38,6 +38,15 @@ import { Transfer } from '@ionic-native/transfer';
 import { FileChooser } from '@ionic-native/file-chooser';
 
 import { SearchDoctors } from '../pages/search-doctors/search-doctors';
+import { TranslateModule, TranslateLoader, TranslatePipe } from '@ngx-translate/core';
+import { TranslateHttpLoader } from '@ngx-translate/http-loader';
+// import { TranslateStaticLoader, TranslatePipe  } from 'ng2-translate/ng2-translate';
+
+import {Http} from '@angular/http';
+
+export function createTranslateLoader(http: Http) {
+     return new TranslateHttpLoader(http, 'assets/i18n', '.json');
+}
 
 @NgModule({
   declarations: [
@@ -79,7 +88,15 @@ import { SearchDoctors } from '../pages/search-doctors/search-doctors';
       ]
     }),
     IonicStorageModule.forRoot(),
-    Ionic2RatingModule
+    Ionic2RatingModule,
+    TranslateModule.forRoot(
+    {
+      loader: {
+        provide: TranslateLoader,
+        useFactory: (createTranslateLoader),
+        deps: [Http]
+      }
+    })
   ],
   bootstrap: [IonicApp],
   entryComponents: [

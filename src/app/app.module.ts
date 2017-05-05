@@ -42,7 +42,7 @@ import { TranslateModule, TranslateLoader, TranslatePipe } from '@ngx-translate/
 import { TranslateHttpLoader } from '@ngx-translate/http-loader';
 // import { TranslateStaticLoader, TranslatePipe  } from 'ng2-translate/ng2-translate';
 
-import { Http } from '@angular/http';
+import {Http} from '@angular/http';
 
 export function createTranslateLoader(http: Http) {
      return new TranslateHttpLoader(http, 'assets/i18n', '.json');
@@ -130,3 +130,4 @@ export function createTranslateLoader(http: Http) {
   ]
 })
 export class AppModule { }
+

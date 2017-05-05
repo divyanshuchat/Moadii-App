@@ -74,7 +74,8 @@ export class ConferenceApp {
     public splashScreen: SplashScreen,
     public translate: TranslateService
   ) {
-translate.setDefaultLang('ar');
+
+    this.translate.setDefaultLang('ar');
     // Check if the user has already seen logged in
    
        this.storage.get('hasLoggedIn')

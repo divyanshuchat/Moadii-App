@@ -17,6 +17,8 @@ import {TranslateService, TranslatePipe} from '@ngx-translate/core';
 
 export class TutorialPage {
   showSkip = true;
+  public login: string = "تسجيل الدخول";
+
 
 	@ViewChild('slides') slides: Slides;
 
@@ -25,7 +27,9 @@ export class TutorialPage {
     public menu: MenuController,
     public storage: Storage,
     public translateService: TranslateService
-  ) {    translateService.use('ar');
+  ) {    
+
+    this.translateService.use('ar');
     }
 
   startApp() {

@@ -8,7 +8,6 @@ import { LoginPage } from '../login/login';
 import { SignupPage } from '../signup/signup';
 
 import { TabsPage } from '../tabs/tabs';
-
 import {TranslateService, TranslatePipe} from '@ngx-translate/core';
 
 @Component({
@@ -18,7 +17,6 @@ import {TranslateService, TranslatePipe} from '@ngx-translate/core';
 
 export class TutorialPage {
   showSkip = true;
-  public LOGIN: string = "تسجيل الدخول";
 
 	@ViewChild('slides') slides: Slides;
 
@@ -27,10 +25,8 @@ export class TutorialPage {
     public menu: MenuController,
     public storage: Storage,
     public translateService: TranslateService
-  ) { 
-
-   translateService.use('ar');
-  }
+  ) {    translateService.use('ar');
+    }
 
   startApp() {
     this.navCtrl.push(TabsPage).then(() => {

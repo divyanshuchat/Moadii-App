@@ -21,6 +21,8 @@ import { UserData } from '../providers/user-data';
 
 import { SearchDoctors } from '../pages/search-doctors/search-doctors';
 
+import {TranslateService} from '@ngx-translate/core';
+
 export interface PageInterface {
   title: string;
   name: string;
@@ -69,9 +71,10 @@ export class ConferenceApp {
     public platform: Platform,
     public confData: ConferenceData,
     public storage: Storage,
-    public splashScreen: SplashScreen
+    public splashScreen: SplashScreen,
+    public translate: TranslateService
   ) {
-
+translate.setDefaultLang('ar');
     // Check if the user has already seen logged in
    
        this.storage.get('hasLoggedIn')
